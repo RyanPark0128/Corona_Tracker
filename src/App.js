@@ -4,23 +4,32 @@ import Chart from './components/Chart/Chart'
 import CountryPicker from './components/CountryPicker/CountryPicker'
 import './App.css'
 import { fetchData } from './api/index';
+import { fetchDailyData } from './api/index';
 
 const App = () => {
-    const [data, setData] = useState({})
-    const dataHandle = async () => {
-        const fetchedData = await fetchData();
-        setData(fetchedData);
+    const [data, setData] = useState({});
+    const [currentCountry, setCurrentCountry] = useState('');
+    const [dailyData, setDailyData] = useState([])
+
+    const handleCountry = async (selectedCountry) => {
+        setCurrentCountry(currentCountry)
+        const fetchedData = await fetchData(selectedCountry);
+        setData(fetchedData)
     }
 
     useEffect(() => {
-        dataHandle()
-    },[]);
+        handleCountry();
+        const fetchAPI = async () => {
+            setDailyData(await fetchDailyData());
+        }
+        fetchAPI();
+    }, []);
 
     return (
         <div className="container">
-            <Cards data={data}/>
-            <CountryPicker />
-            <Chart />
+            <Cards data={data} />
+            <CountryPicker handleCountry={handleCountry} />
+            <Chart data={data} country={currentCountry} dailyData={dailyData} />
         </div>
     )
 }
