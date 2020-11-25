@@ -9,47 +9,51 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         return 'Loading';
     }
     return (
-        <div className="container">
+        <div className="card-container">
             <Grid container spacing={3} justify="center">
                 <Grid item component={Card} xs={12} md={3} className={"card infected"}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h6">
                             <CountUp
                                 start={0}
                                 end={confirmed.value}
-                                duration={2.5}
+                                duration={1}
                                 separator=","
                             />
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography variant="body2">Number of active cases of COVID-19</Typography>
+                        <Typography variant="body2">Number of confirmed cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
 
                 <Grid item component={Card} xs={12} md={3} className={"card recovered"}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <CountUp
-                            start={0}
-                            end={recovered.value}
-                            duration={2.5}
-                            separator=","
-                        />
+                        <Typography variant="h6">
+                            <CountUp
+                                start={0}
+                                end={recovered.value}
+                                duration={1}
+                                separator=","
+                            />
+                        </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography variant="body2">Number of Recover cases of COVID-19</Typography>
+                        <Typography variant="body2">Number of recovered cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
 
                 <Grid item component={Card} xs={12} md={3} className={"card death"}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Death</Typography>
-                        <CountUp
-                            start={0}
-                            end={deaths.value}
-                            duration={2.5}
-                            separator=","
-                        />
+                        <Typography variant="h6">
+                            <CountUp
+                                start={0}
+                                end={deaths.value}
+                                duration={1}
+                                separator=","
+                            />
+                        </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of death cases of COVID-19</Typography>
                     </CardContent>

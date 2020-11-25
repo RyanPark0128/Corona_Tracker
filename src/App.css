@@ -3,8 +3,12 @@ body {
 }
 
 .container {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
+    
+}
+
+p { 
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
 }

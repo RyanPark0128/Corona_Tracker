@@ -1,5 +1,15 @@
-.container {
-    display: flex;
-    justify-content: center;
-    width: 85%;
+.chart-container {
+    width:60%;
+    align-self: center;
+    margin-left: 20%;
+}
+
+.pie {
+    width: 50%;
+    display: inline-block;
+}
+
+.bar {
+    width: 50%;
+    display: inline-block;
 }

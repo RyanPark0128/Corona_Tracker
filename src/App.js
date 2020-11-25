@@ -27,8 +27,9 @@ const App = () => {
 
     return (
         <div className="container">
-            <Cards data={data} />
+            <p>Coronavirus (COVID-19) Dashboard</p>
             <CountryPicker handleCountry={handleCountry} />
+            <Cards data={data} />
             <Chart data={data} country={currentCountry} dailyData={dailyData} />
         </div>
     )
