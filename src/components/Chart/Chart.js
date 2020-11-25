@@ -100,8 +100,8 @@ const Chart = ({ data: { confirmed, recovered, deaths, lastUpdate }, dailyData }
                     }}
                 />
             </div>
-            <div>
-                <p>Confirmed and Deaths cases Vs Dates</p>
+            <div className="lineChart">
+                <p>Global Confirmed and Deaths Cases Vs Dates</p>
                 {lineChart}
             </div>
         </div>

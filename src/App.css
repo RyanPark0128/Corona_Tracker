@@ -5,10 +5,17 @@ body {
 .container {
     align-items: center;
     text-align: center;
+    margin-top: 75px;
     
 }
 
 p { 
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
+}
+
+@media only screen and (max-width: 960px) {
+    p {
+        font-size: 25px;
+    }
 }

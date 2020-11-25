@@ -1,15 +1,48 @@
 .chart-container {
     width:60%;
     align-self: center;
-    margin-left: 20%;
+    padding-left: 20%;
 }
 
 .pie {
-    width: 50%;
+    width: 40%;
     display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+
 }
 
 .bar {
-    width: 50%;
+    width: 40%;
     display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.lineChart {
+    margin-top: 200px;
+    padding-bottom: 200px;
+}
+
+@media only screen and (max-width: 960px) {
+    .pie {
+        width: 100%;
+        padding:0;
+        display:block;
+        margin-bottom: 50px;
+    }
+    .bar {
+        width: 100%;
+        display:block;
+        padding:0;
+        
+    }
+    .chart-container {
+        width: 80%;
+        padding-left: 10%;
+    }
+    .lineChart p {
+        font-size: 20px;
+    }
 }

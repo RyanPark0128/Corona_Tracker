@@ -14,7 +14,8 @@ const CountryPicker = ({ handleCountry }) => {
         fetchAPI();
     }, [fetchedCountries])
     return (
-        <FormControl className="formControl">
+        <div className="country-container">
+            <FormControl className="formControl">
 
 
 
@@ -24,8 +25,9 @@ const CountryPicker = ({ handleCountry }) => {
                 </option>
                     {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
                 </NativeSelect>
-        </FormControl>
-            )
-        }
-        
+            </FormControl>
+        </div>
+    )
+}
+
 export default CountryPicker;
