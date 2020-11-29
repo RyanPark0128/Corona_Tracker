@@ -5,7 +5,8 @@ import './Chart.css'
 
 const Chart = ({ data: { confirmed, recovered, deaths, lastUpdate }, dailyData }) => {
 
-    if (!confirmed) {
+    if (!confirmed || !dailyData) {
+        console.log(dailyData)
         return "loading";
     }
     const PieChartConfig = {
