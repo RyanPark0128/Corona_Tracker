@@ -6,7 +6,11 @@ import CountUp from 'react-countup'
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
 
     if (!confirmed) {
-        return 'Loading';
+        return (
+            <div className="card-container">
+                <div class="loader"></div>
+            </div>
+        )
     }
     return (
         <div className="card-container">

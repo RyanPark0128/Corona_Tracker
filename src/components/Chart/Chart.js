@@ -6,8 +6,11 @@ import './Chart.css'
 const Chart = ({ data: { confirmed, recovered, deaths, lastUpdate }, dailyData }) => {
 
     if (!confirmed || !dailyData) {
-        console.log(dailyData)
-        return "loading";
+        return (
+            <div className="chart-container">
+                <div class="loader"></div>
+            </div>
+        )
     }
     const PieChartConfig = {
         labels: ['Confirmed', 'Recoverd', 'Deaths'],
